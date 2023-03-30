@@ -64,8 +64,8 @@ class Time:
         """
         if month < 7 and today.month > 7:
             return today.year + 1
-        if month > 7 and today.month < 7:
-            return today.year - 1
+        # if month > 7 and today.month < 7: # TODO faire un mode spécial pour les calendriers de l'année d'après
+        #   return today.year - 1
         return today.year
 
     @classmethod

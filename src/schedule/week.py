@@ -107,7 +107,10 @@ class Week:
                 if c1 != c2 and c1.contain(c2):
                     overlapping.append(c2)
         for o in overlapping:
+            try:
                 classes.remove(o)
+            except ValueError:
+                pass
     
     def gen_courses(self) -> List[Course]:
         courses = []

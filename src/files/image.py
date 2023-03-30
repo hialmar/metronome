@@ -26,7 +26,10 @@ class Image:
         self.color = cv2.imread(filename=path, flags=cv2.IMREAD_COLOR) if img is None else img
         h, w, _ = self.color.shape
         if margin is not None:
-            self.color = self.color[margin.y1():margin.y2(), margin.x1():margin.x2()]
+            tempo = self.color[margin.y1():margin.y2(), margin.x1():margin.x2()]
+            h, w, _ = tempo.shape
+            if h != 0 and w != 0:
+                self.color = tempo
         self.gray = cv2.cvtColor(src=self.color, code=cv2.COLOR_BGR2GRAY)
         h, w, _ = self.color.shape
         self.area = Area(p1=Point(0,0), p2=Point(w,h))
