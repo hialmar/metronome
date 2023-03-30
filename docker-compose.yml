@@ -11,5 +11,6 @@ services:
     environment:
       TIME: 900 # 15 min check
     volumes:
-      - /path/to/config/folder:/config
+      - /Users/torguet/dev/Python/metronome/config:/config
+      - /Users/torguet/dev/Python/metronome/ics:/ics
     restart: unless-stopped
